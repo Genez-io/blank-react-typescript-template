@@ -1,6 +1,21 @@
+# The name of the project.
 name: (•◡•)project-name(•◡•)
+# The region where the project is deployed.
 region: (•◡•)region(•◡•)
+# The version of the Genezio YAML configuration to parse.
+yamlVersion: 2
+# Information about the frontend, including the path, language, and publish directory.
+# It is optional. It can also be an array if there are multiple frontends you want to deploy.
 frontend:
-    path: ./dist
-scripts:
-    preFrontendDeploy: npm install @genezio-sdk/(•◡•)project-name(•◡•)_(•◡•)region(•◡•) && npm install && npm run build
+  # The folder where the frontend scripts will run.
+  path: .
+  # The language the frontend is written in. Used to generate the proper Genezio SDK for this frontend.
+  language: ts
+  # The directory that will be published to the CDN. It is relative to the path.
+  publish: ./dist
+  scripts:
+    # List of scripts to run before deploying the frontend.
+    deploy:
+      - npm install @genezio-sdk/(•◡•)project-name(•◡•)_(•◡•)region(•◡•)
+      - npm install
+      - npm run build
