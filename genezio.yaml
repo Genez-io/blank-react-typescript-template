@@ -12,7 +12,7 @@ frontend:
   path: .
   # The language the frontend is written in. Used to generate the proper Genezio SDK for this frontend.
   language: ts
-  # The directory that will be published to the CDN. It is relative to the path.
+  # The directory that will be published to the CDN. It is relative to the `path` directory.
   publish: dist
   # Scripts are running in the specified `path` directory.
   scripts:
